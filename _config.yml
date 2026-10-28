@@ -1,0 +1,8 @@
+# Jekyll config. GitHub Pages builds the site from these Markdown files on every push.
+title: Moses Muchiri
+description: Notes on security and machine learning.
+theme: minima
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+plugins:
+  - jekyll-feed

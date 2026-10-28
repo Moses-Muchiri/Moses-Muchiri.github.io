@@ -1,0 +1,111 @@
+---
+# moses-black page on top of minima 2.5 (the GitHub Pages default theme),
+# with gruvbox dark for code.
+---
+
+$base-font-family: "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$text-color:       #efefef;
+$background-color: #191919;
+$brand-color:      #5ca3f5;
+$grey-color:       #9c9c9c;
+$grey-color-light: #303030;
+$grey-color-dark:  #d4d4d4;
+
+@import "minima";
+
+// JetBrains Mono ships with the site so code looks the same everywhere.
+@font-face {
+  font-family: "JetBrains Mono";
+  src: local("JetBrains Mono"), url("fonts/JetBrainsMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: local("JetBrains Mono Italic"), url("fonts/JetBrainsMono-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+::selection { background: #303030; color: #ffffff; }
+
+a, a:visited { color: $brand-color; }
+a:hover { color: #ffffff; }
+
+// Header and footer sit on the darker panel black, like the desktop panel.
+.site-header {
+  background: #141414;
+  border-top: 0;
+  border-bottom: 1px solid #303030;
+}
+.site-title, .site-title:visited { color: #ffffff; }
+.site-nav .page-link { color: #d4d4d4; }
+.site-nav .page-link:hover { color: #ffffff; text-decoration: none; }
+.site-footer { border-top: 1px solid #303030; color: #9c9c9c; }
+
+table {
+  border-color: #303030;
+  th { background: #222222; border: 1px solid #303030; }
+  td { border: 1px solid #303030; }
+  tr:nth-child(even) { background: #1f1f1f; }
+}
+
+blockquote { border-left-color: #404040; color: #9c9c9c; }
+hr { border: 0; border-top: 1px solid #303030; }
+
+// Code: gruvbox dark (bg #282828, fg #ebdbb2).
+$mono: "JetBrains Mono", "DejaVu Sans Mono", Menlo, Consolas, ui-monospace, monospace;
+
+pre, code {
+  font-family: $mono;
+  font-size: 14px;
+  color: #ebdbb2;
+}
+code {
+  background: #282828;
+  border: 1px solid #3c3836;
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+pre, .highlighter-rouge .highlight {
+  background: #282828;
+  border: 1px solid #3c3836;
+  border-radius: 8px;
+}
+// minima nests pre.highlight inside div.highlight: one box, not two.
+.highlighter-rouge .highlight pre.highlight { background: transparent; border: 0; margin: 0; }
+pre { padding: 12px 16px; line-height: 1.55; }
+pre code { background: transparent; border: 0; padding: 0; }
+
+.highlight {
+  color: #ebdbb2;
+  .c, .ch, .cm, .c1, .cs, .cpf { color: #928374; font-style: italic; }
+  .cp { color: #8ec07c; }
+  .k, .kd, .kn, .kp, .kr, .ow { color: #fb4934; }
+  .kc, .kt { color: #d3869b; }
+  .s, .s1, .s2, .sa, .sb, .sc, .sd, .sh, .si, .sx, .sr, .ss { color: #b8bb26; }
+  .se { color: #fe8019; }
+  .m, .mb, .mf, .mh, .mi, .mo, .il { color: #d3869b; }
+  .nb, .bp { color: #fe8019; }
+  .nf, .fm { color: #8ec07c; }
+  .nc, .nn, .ne { color: #fabd2f; }
+  .nd, .na { color: #8ec07c; }
+  .nt { color: #83a598; }
+  .n, .nv, .vi, .vg, .vc, .nx { color: #ebdbb2; }
+  .o, .p { color: #d5c4a1; }
+  .w { color: #ebdbb2; }
+  .err { color: #fb4934; background: transparent; }
+  .gp { color: #928374; }
+  .go { color: #d5c4a1; }
+  .gd { color: #fb4934; }
+  .gi { color: #b8bb26; }
+  .gh, .gu { color: #83a598; }
+}
+
+// Home page: the greeting and the particle field (assets/js/home.js).
+.hero { font-size: 1.5rem; margin: 0.5rem 0 1rem; }
+#role { color: #ffffff; transition: opacity 0.5s ease; }
+#particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.site-header, .page-content, .site-footer { position: relative; z-index: 1; }
